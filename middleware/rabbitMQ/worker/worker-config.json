@@ -11,31 +11,5 @@
       },
       "prefetchCount": 1
     }
-  },
-  "catalog-sync": {
-    "messaging": {
-      "bindings": {
-        "catalog-sync": ["fulfillment.sku_sync"]
-      },
-      "exchanges": {
-        "catalog-sync": {
-          "name": "catalog.sku_sync"
-        }
-      },
-      "prefetchCount": 1
-    }
-  },
-  "update-tenant": {
-    "messaging": {
-      "bindings": {
-        "update-tenant": ["fulfilment.update_tenant", "payment_update_tenant"]
-      },
-      "exchanges": {
-        "update-tenant": {
-          "name": "ops.update_tenant"
-        }
-      },
-      "prefetchCount": 1
-    }
   }
 }

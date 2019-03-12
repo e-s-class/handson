@@ -1,0 +1,8 @@
+# binding soure=[exchange명] destination_type='queue' destination=[queue명]
+
+rabbitmqadmin declare exchange name='catalog.sku_sync' type='direct' durable='true' auto_delete='false'
+
+rabbitmqadmin declare queue name='fulfillment.sku_sync' durable='true' auto_delete='false'
+
+rabbitmqadmin declare binding source='catalog.sku_sync' destination_type='queue' destination='fulfillment.sku_sync'
+

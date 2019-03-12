@@ -74,3 +74,9 @@ ch.comsume(queue, (msg) => {});
  * topic: routingKey를 주지 않는다. direct 처럼 동작 (Optional)
    - 실제 서비스에 routingKey를 주는 사례가 없다.
    - rabbitmqadmin은 routinkgKey를 줄수없기 때문에, rabbitMq Manager에서 실습
+```
+# git tags
+v1.0 : p-q-c base model + order-notification(exchange = topic, but work direct)
+v2.0 : direct, fanout only queue.txt + need to implementation
+v3.0 : direct, fanout implmentation, sample is work
+```
