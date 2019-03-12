@@ -51,14 +51,14 @@ class BaseMessenger {
 		return this.messagingConfig.bindings[exchangeId];
 	}
 
-	async _bindQueueToExchange(queue, exchange) {
+	async _bindQueueToExchange(queue, exchange, routingKey = '') {
 		try {
 			let channel = await this.getChannel();
 			this._setPrefetch(channel);
 			let q = queue;
 			if (exchange.bindQueue) {
 				console.log('MessageConsumer', '_bindQueueToExchange', `Binding queue ${q} to exchange ${exchange.name}`);
-				await channel.bindQueue(q, exchange.name, '');
+				await channel.bindQueue(q, exchange.name, routingKey);
 			}
 			await channel.consume(q, this.processMessage(queue, exchange.name, channel));
 		} catch (e) {

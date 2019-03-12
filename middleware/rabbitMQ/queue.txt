@@ -1,7 +1,5 @@
-# rabbit container에서 실행하시오.
-* type이 topic 인데 routingKey가 없으면 direct와 동일하다.
+# type이 topic 인데 routingKey가 없으면 direct와 동일하다.
 
-### fulfillment_order_notification
 rabbitmqadmin declare exchange name='fulfillment.order_notification' type='topic' durable='true' auto_delete='false'
 
 rabbitmqadmin declare queue name='fulfillment.order_notification' durable='true' auto_delete='false'

@@ -1,5 +1,7 @@
 const BaseMessenger = require('../base-messenger'),
-		OrderNotificationProcessor = require('../../processor/order-notification-processor');
+		OrderNotificationProcessor = require('../../processor/order-notification-processor'),
+		UpdateTenantProcessor = require('../../processor/update-tenant-processor'),
+		CatalogSyncProcessor = require('../../processor/catalog-sync-processor');
 
 class MessageConsumer extends BaseMessenger {
 	constructor(workerName, workerConfig, rabbitMqConnection) {
@@ -20,7 +22,7 @@ class MessageConsumer extends BaseMessenger {
 	}
 
 	processMessage(queue, exchange, channel) {
-		console.log('BaseMessenger processMessage queue:', queue, ', exchange:', exchange);
+		console.log('MessageConsumer processMessage queue:', queue, ', exchange:', exchange);
 		return (msg) => {
 			let requestContext = this._generateNewRequestContext();
 			if (msg) {
@@ -35,7 +37,13 @@ class MessageConsumer extends BaseMessenger {
 					let messageProcessor;
 					switch (this.workerName) {
 						case 'order-notification':
-							messageProcessor = new OrderNotificationProcessor(requestContext);
+							messageProcessor = new OrderNotificationProcessor(requestContext, this.workerName);
+							break;
+						case 'update-tenant':
+							messageProcessor = new UpdateTenantProcessor(requestContext, this.workerName);
+							break;
+						case 'catalog-sync':
+							messageProcessor = new CatalogSyncProcessor(requestContext, this.workerName);
 							break;
 						default:
 							console.log('Unknown worker with ' + this.workerName);

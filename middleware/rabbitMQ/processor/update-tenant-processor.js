@@ -1,9 +1,9 @@
 const BaseProcessor = require('./base-processor');
 
-class OrderNotificationProcessor extends BaseProcessor {
+class UpdateTenantProcessor extends BaseProcessor {
 	constructor(requestContext, workerName) {
 		super(requestContext, workerName);
 	}
 }
 
-module.exports = OrderNotificationProcessor;
+module.exports = UpdateTenantProcessor;

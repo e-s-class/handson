@@ -1,9 +1,11 @@
-const MessageConsumer = require('../messaging/exchange/message-consumer');
+const MessageConsumer = require('../messaging/exchange/message-consumer'),
+		workerConfig = require('./worker-config.json'),
+		rabbitMqConnection = require('../messaging/rabbitmq-connection');
 
 class QueueWorker {
-	constructor(workerName, workerConfig, rabbitMqConnection) {
+	constructor(workerName) {
 		this.workerName = workerName;
-		this.workerConfig = workerConfig;
+		this.workerConfig = workerConfig[workerName];
 		this.rabbitMqConnection = rabbitMqConnection;
 	}
 
