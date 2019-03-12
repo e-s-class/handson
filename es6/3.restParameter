@@ -1,0 +1,9 @@
+// rest parameter and spread operator
+function restParameter(x, y, ...rest) {
+    console.log(x, y, rest);
+    console.log(x, y, ...rest);
+}
+
+restParameter(1, 2);
+restParameter(1, 2, 3);
+restParameter(1, 2, 3, 4);

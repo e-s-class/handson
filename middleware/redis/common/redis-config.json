@@ -1,0 +1,15 @@
+{
+  "db": 6,
+  "defaultExpTime": 3600,
+  "expTimeOverwrites": {
+    "eppInfo": 100,
+    "eppStore": 100,
+    "inventorySku": 100,
+    "skuFlag": 100,
+    "wareHouseInfo": 100
+  },
+  "maxReconnectWaitTime": 1000,
+  "host": "redis",
+  "port": "6379",
+  "totalRetryTimeInSeconds": 1
+}

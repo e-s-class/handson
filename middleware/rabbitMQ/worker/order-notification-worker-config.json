@@ -1,0 +1,13 @@
+{
+  "messaging": {
+    "bindings": {
+      "order-notification": ["fulfillment.order_notification"]
+    },
+    "exchanges": {
+      "order-notification": {
+        "name": "fulfillment.order_notification"
+      }
+    },
+    "prefetchCount": 1
+  }
+}

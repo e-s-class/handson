@@ -1,0 +1,40 @@
+{
+  "name": "handson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --recursive tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jumpitup82/handson.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jumpitup82/handson/issues"
+  },
+  "homepage": "https://github.com/jumpitup82/handson#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "co-redis": "^2.1.1",
+    "lodash": "^4.17.11",
+    "pg-promise": "^8.6.3",
+    "uuid": "^3.3.2",
+    "amqplib": "^0.5.3",
+    "redis": "^2.8.0",
+    "bcrypt": "^3.0.4",
+    "catbox-redis": "^4.2.4",
+    "co": "^4.6.0",
+    "hapi": "^18.1.0",
+    "hapi-auth-basic": "^5.0.0",
+    "inert": "^5.1.2",
+    "joi": "^14.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "sinon": "^7.2.7"
+  }
+}
