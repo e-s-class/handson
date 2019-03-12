@@ -1,7 +1,5 @@
 const BaseMessenger = require('../base-messenger'),
-		OrderNotificationProcessor = require('../../processor/order-notification-processor'),
-		UpdateTenantProcessor = require('../../processor/update-tenant-processor'),
-		CatalogSyncProcessor = require('../../processor/catalog-sync-processor');
+		OrderNotificationProcessor = require('../../processor/order-notification-processor');
 
 class MessageConsumer extends BaseMessenger {
 	constructor(workerName, workerConfig, rabbitMqConnection) {
@@ -38,12 +36,6 @@ class MessageConsumer extends BaseMessenger {
 					switch (this.workerName) {
 						case 'order-notification':
 							messageProcessor = new OrderNotificationProcessor(requestContext, this.workerName);
-							break;
-						case 'update-tenant':
-							messageProcessor = new UpdateTenantProcessor(requestContext, this.workerName);
-							break;
-						case 'catalog-sync':
-							messageProcessor = new CatalogSyncProcessor(requestContext, this.workerName);
 							break;
 						default:
 							console.log('Unknown worker with ' + this.workerName);
