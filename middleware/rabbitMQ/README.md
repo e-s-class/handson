@@ -80,3 +80,7 @@ v1.0 : p-q-c base model + order-notification(exchange = topic, but work direct)
 v2.0 : direct, fanout only queue.txt + need to implementation
 v3.0 : direct, fanout implmentation, sample is work
 ```
+
+#### 개선사항
+* exchange type=direct 인 경우, routingKey 값을 보고 메세지가 binding된 queue로 갈지 결정한다.
+* exchange type=topic 인 경우, routingKey의 패턴에 따라 어떤 queue로 메세지가 결정된다.
